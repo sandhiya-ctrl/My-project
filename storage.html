@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .Main {
+            height: 100vh;
+            width: 100vw;
+            background-color: lightblue;
+            position: relative;
+        }
+
+        .sub {
+            height: 60vh;
+            width: 60vw;
+            position: absolute;
+            background-color: rgb(6, 182, 241);
+             top:20vh;
+             left:20vw;
+        }
+        #inval{
+            margin-left: 20vw;
+            margin-top: 10vh;
+        }
+        #intitle{
+            display: block;
+            position: absolute;
+            top:5vh;
+            left:20vw;
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="Main">
+        <div class="sub">
+            <input type="text" id="intitle">
+            <input type="text" id="inval">
+            <button onclick="addtask()">Add</button>
+        </div>
+
+    </div>
+    <script>
+        function addtask() {
+            let title=document.getElementById("intitle").value;
+            let task = document.getElementById("inval").value;
+            localStorage.setItem(title,task);
+            const sdata=localStorage.getItem('div_width');
+             console.log(sdata);
+        }
+    </script>
+</body>
+
+</html>
